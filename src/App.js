@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form className="box">
+      <input type="text" className="input" placeholder='User Name' required/>
+      <input type="email" className="input" placeholder='E-mail' required />
+      <input type="password" className="input" placeholder='password' required />
+      <button className="btn">Registr</button>
+    </form>
+
   );
 }
+const inputEl = document.querySelector('.input');
+const btnEl = document.querySelector('.btn');
+btnEl.addEventListener('click', () =>{
+  localStorage.setItem(inputEl)
+  // localStorage.removeItem(inputEl)
+})
 
 export default App;
